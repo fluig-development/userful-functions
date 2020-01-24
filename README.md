@@ -28,6 +28,7 @@ pesquisar.quantityOfTimes("do")
 ```javascript
 const converter = new ConvertTo("R$ 1.500,50")
 let retorno = converter.currencyToNumber()
-```
+
 // Retorno: 1500.50
+```
 
