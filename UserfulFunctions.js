@@ -1,4 +1,3 @@
-
 function SeekTo(value){
 	this.value = new String(value);
 
@@ -51,11 +50,20 @@ function ConvertTo(value){
         return value;
     }
 	
-	this.numberToCurrency = (value) => {
+	this.numberToCurrency = (locate = "pt-BR", currency = "BRL", minimumFractionDigits = 2,  maximumFractionDigits = 2) => {
+        let value = this.value;
 		if(typeof value != "number"){
 			throw new DOMException("The informed value is not a number");
 		}
 
-		return value;
+        const options = { 
+							style: 'currency', 
+                            currency: currency, 
+                            minimumFractionDigits: minimumFractionDigits,
+                            maximumFractionDigits: maximumFractionDigits
+                          }
+
+        
+		return value.toLocaleString(locate, options)
 	}
 }
